@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,192 +12,186 @@ src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.m
 
 <style>
 :root {
-  --bg: #f3f6fa;
-  --card: #ffffff;
-  --ink: #14263d;
-  --mute: #5b6b80;
-  --navy: #102c4c;
-  --accent: #1f7ae0;
-  --line: #d8e0ea;
+  --bg:#f3f6fa;
+  --card:#fff;
+  --ink:#14263d;
+  --mute:#5b6b80;
+  --navy:#102c4c;
+  --accent:#1f7ae0;
+  --line:#d8e0ea;
 }
-
-* { box-sizing: border-box; }
-
+* { box-sizing:border-box; }
 body {
-  margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-  background: var(--bg);
-  color: var(--ink);
-  line-height: 1.5;
+  margin:0;
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.5;
 }
-
 header {
-  background: var(--navy);
-  color: white;
-  padding: 36px 20px 28px;
+  background:var(--navy);
+  color:white;
+  padding:36px 20px 28px;
 }
-
 .wrap {
-  max-width: 980px;
-  margin: auto;
-  padding: 0 16px;
+  max-width:980px;
+  margin:auto;
+  padding:0 16px;
 }
-
-header .wrap { padding: 0; }
-
+header .wrap { padding:0; }
 .eyebrow {
-  font-size: .8rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: #8fc2ff;
+  font-size:.8rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:#8fc2ff;
 }
-
 h1 {
-  margin: 6px 0 10px;
-  font-size: clamp(1.6rem, 4vw, 2.4rem);
-  line-height: 1.2;
+  margin:6px 0 10px;
+  font-size:clamp(1.6rem,4vw,2.4rem);
+  line-height:1.2;
 }
-
 header p {
-  margin: 0;
-  max-width: 700px;
-  color: #cfdced;
+  margin:0;
+  max-width:700px;
+  color:#cfdced;
 }
-
 .tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 20px 0 14px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:20px 0 14px;
 }
-
 .tabs button {
-  border: 1px solid var(--line);
-  background: var(--card);
-  color: var(--ink);
-  padding: 9px 16px;
-  border-radius: 999px;
-  font-size: .95rem;
-  cursor: pointer;
+  border:1px solid var(--line);
+  background:var(--card);
+  color:var(--ink);
+  padding:9px 16px;
+  border-radius:999px;
+  font-size:.95rem;
+  cursor:pointer;
 }
-
 .tabs button.on {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: white;
+  background:var(--accent);
+  border-color:var(--accent);
+  color:white;
 }
-
 .card {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 18px;
-  margin-bottom: 16px;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:18px;
+  margin-bottom:16px;
 }
-
 .label {
-  font-size: .75rem;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: var(--mute);
+  font-size:.75rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--mute);
 }
-
 h2 {
-  margin: 4px 0 6px;
-  font-size: 1.3rem;
+  margin:4px 0 6px;
+  font-size:1.3rem;
 }
-
+.viewer-wrap {
+  position:relative;
+  width:100%;
+}
 model-viewer {
-  display: block;
-  width: 100%;
-  height: 380px;
-  background: radial-gradient(circle at 50% 40%, #e9f1fb, #c9d8ea);
-  border-radius: 10px;
-  --poster-color: transparent;
+  display:block;
+  width:100%;
+  height:380px;
+  background:radial-gradient(circle at 50% 40%,#e9f1fb,#c9d8ea);
+  border-radius:10px;
+  --poster-color:transparent;
 }
-
-.hint {
-  font-size: .85rem;
-  color: var(--mute);
-  margin: 8px 0 0;
+.ar-controls {
+  display:flex;
+  justify-content:center;
+  margin-top:12px;
 }
-
 .arbtn {
-  background: var(--navy);
-  color: white;
-  border: 0;
-  padding: 10px 16px;
-  border-radius: 8px;
-  cursor: pointer;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  background:var(--navy);
+  color:white;
+  border:0;
+  padding:12px 22px;
+  border-radius:9px;
+  font-size:1rem;
+  font-weight:600;
+  cursor:pointer;
+  min-width:150px;
 }
-
+.arbtn:hover { background:var(--accent); }
+.arbtn:disabled {
+  opacity:.6;
+  cursor:wait;
+}
+.hint {
+  font-size:.85rem;
+  color:var(--mute);
+  margin:8px 0 0;
+}
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 12px;
-  margin: 12px 0;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:12px;
+  margin:12px 0;
 }
-
 .metric {
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 12px;
-  min-width: 0;
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:12px;
+  min-width:0;
 }
-
 .metric b {
-  display: block;
-  font-size: 1.35rem;
-  margin-top: 2px;
-  overflow-wrap: anywhere;
+  display:block;
+  font-size:1.35rem;
+  margin-top:2px;
+  overflow-wrap:anywhere;
 }
-
 input[type="range"] {
-  width: 100%;
-  accent-color: var(--accent);
-  cursor: pointer;
+  width:100%;
+  accent-color:var(--accent);
+  cursor:pointer;
 }
-
 .eq {
-  font-family: Georgia, serif;
-  font-size: 1.2rem;
-  background: var(--bg);
-  padding: 10px 14px;
-  border-radius: 8px;
-  display: inline-block;
+  font-family:Georgia,serif;
+  font-size:1.2rem;
+  background:var(--bg);
+  padding:10px 14px;
+  border-radius:8px;
+  display:inline-block;
 }
-
 .note {
-  font-size: .88rem;
-  color: var(--mute);
+  font-size:.88rem;
+  color:var(--mute);
 }
-
 footer {
-  padding: 10px 0 40px;
-  font-size: .82rem;
-  color: var(--mute);
+  padding:10px 0 40px;
+  font-size:.82rem;
+  color:var(--mute);
 }
-
-@media (max-width: 600px) {
-  model-viewer { height: 300px; }
-  .card { padding: 14px; }
-  .tabs button { padding: 8px 12px; }
+@media(max-width:600px) {
+  model-viewer { height:300px; }
+  .card { padding:14px; }
+  .tabs button { padding:8px 12px; }
 }
-
-@media (prefers-color-scheme: dark) {
+@media(prefers-color-scheme:dark) {
   :root {
-    --bg: #0b1624;
-    --card: #12233a;
-    --ink: #e6edf6;
-    --mute: #a6b5c9;
-    --line: #243a57;
+    --bg:#0b1624;
+    --card:#12233a;
+    --ink:#e6edf6;
+    --mute:#a6b5c9;
+    --line:#243a57;
   }
 }
 </style>
 </head>
 
 <body>
-
 <header>
   <div class="wrap">
     <div class="eyebrow">Interactive WebAR learning lab</div>
@@ -204,14 +199,13 @@ footer {
     <p>
       Select a transducer, explore its 3D model, and adjust an input
       to see how its acoustic or electrical output responds.
-      On a compatible phone, tap <b>View in AR</b> to place the model
+      On a compatible phone, tap View in AR to place the model
       in your surroundings.
     </p>
   </div>
 </header>
 
 <main class="wrap">
-
   <div class="tabs" id="tabs" aria-label="Select a transducer"></div>
 
   <section class="card">
@@ -219,28 +213,35 @@ footer {
     <h2 id="name">Transmitter (40 kHz)</h2>
     <p id="blurb"></p>
 
-    <model-viewer
-      id="viewer"
-      src="./transmitter.glb"
-      alt="Interactive 3D model of an ultrasonic transducer"
-      camera-controls
-      auto-rotate
-      shadow-intensity="1"
-      exposure="1.1"
-      environment-image="neutral"
-      ar
-      ar-modes="webxr scene-viewer quick-look"
-      touch-action="pan-y">
+    <div class="viewer-wrap">
+      <model-viewer
+        id="viewer"
+        src="./transmitter.glb"
+        alt="3D ultrasonic transducer model"
+        camera-controls
+        auto-rotate
+        shadow-intensity="1"
+        exposure="1.1"
+        environment-image="neutral"
+        ar
+        ar-modes="webxr scene-viewer quick-look"
+        touch-action="pan-y">
+      </model-viewer>
+    </div>
 
-      <button slot="ar-button" class="arbtn">View in AR</button>
-    </model-viewer>
+    <!-- Always-visible button: intentionally outside model-viewer -->
+    <div class="ar-controls">
+      <button type="button" class="arbtn" id="arButton">
+        <span aria-hidden="true">◎</span> View in AR
+      </button>
+    </div>
 
     <p class="hint" id="status" role="status" aria-live="polite">
       Loading 3D model...
     </p>
     <p class="hint">
-      Drag to rotate · Pinch or scroll to zoom ·
-      AR availability depends on your device and browser.
+      Drag to rotate · Pinch or scroll to zoom.
+      AR requires a compatible device and browser.
     </p>
   </section>
 
@@ -256,17 +257,14 @@ footer {
         <span class="label" id="label1">Output</span>
         <b id="value1">—</b>
       </div>
-
       <div class="metric">
         <span class="label">Change from baseline</span>
         <b id="change">+0.00%</b>
       </div>
-
       <div class="metric">
         <span class="label" id="label3">Secondary output</span>
         <b id="value3">—</b>
       </div>
-
       <div class="metric">
         <span class="label" id="label4">Input</span>
         <b id="value4">—</b>
@@ -283,12 +281,11 @@ footer {
     <p id="how"></p>
     <div class="eq" id="equation"></div>
     <p id="more"></p>
-
     <p class="note">
       <b>AR compatibility:</b>
-      Android devices generally need a compatible browser and AR services.
+      Android generally needs a compatible browser and AR services.
       On iPhone, open the page in Safari for AR Quick Look.
-      If AR is unsupported, the 3D viewer and slider can still work.
+      The 3D viewer remains available if AR is unsupported.
     </p>
   </section>
 
@@ -297,7 +294,6 @@ footer {
     Check actual component specifications before using these equations
     for real measurements.
   </footer>
-
 </main>
 
 <script>
@@ -305,118 +301,102 @@ footer {
 
 const transducers = [
   {
-    name: 'Transmitter (40 kHz)',
-    tab: 'Transmitter',
-    file: 'transmitter.glb',
-    description:
-      'A piezoelectric element vibrates near its resonant frequency and produces ultrasonic sound.',
-    input: 'Drive voltage',
-    unit: 'V',
-    min: 0, max: 20, step: 0.1, initial: 10, digits: 1,
-    baseline: 10,
-    calculate: x => ({
-      primary: 0.796 * x,
-      secondary: x > 0 ? 20 * Math.log10((0.796 * x) / 0.00002) : null
+    name:'Transmitter (40 kHz)',
+    tab:'Transmitter',
+    file:'transmitter.glb',
+    description:'A piezoelectric element vibrates near its resonant frequency and produces ultrasonic sound.',
+    input:'Drive voltage', unit:'V',
+    min:0, max:20, step:0.1, initial:10, digits:1,
+    baseline:10,
+    calculate:x=>({
+      primary:0.796*x,
+      secondary:x>0 ? 20*Math.log10((0.796*x)/0.00002) : null
     }),
-    primaryLabel: 'Illustrative sound pressure',
-    primaryValue: s => s.primary.toFixed(2) + ' Pa',
-    secondaryLabel: 'Sound pressure level',
-    secondaryValue: s => s.secondary === null ? '—' : s.secondary.toFixed(1) + ' dB',
-    main: 'primary',
-    how:
-      'The inverse piezoelectric effect converts an applied alternating voltage into mechanical vibration. Near resonance, the vibration produces ultrasonic waves.',
-    equation: 'p ≈ k · V',
-    more:
-      'The pressure coefficient used here is illustrative. Actual output depends on the transducer, drive waveform, frequency, and measurement distance.'
+    primaryLabel:'Illustrative sound pressure',
+    primaryValue:s=>s.primary.toFixed(2)+' Pa',
+    secondaryLabel:'Sound pressure level',
+    secondaryValue:s=>s.secondary===null?'—':s.secondary.toFixed(1)+' dB',
+    main:'primary',
+    how:'The inverse piezoelectric effect converts an applied alternating voltage into mechanical vibration. Near resonance, the vibration produces ultrasonic waves.',
+    equation:'p ≈ k · V',
+    more:'The pressure coefficient used here is illustrative. Actual output depends on the transducer, drive waveform, frequency, and measurement distance.'
   },
   {
-    name: 'Receiver (40 kHz)',
-    tab: 'Receiver',
-    file: 'receiver.glb',
-    description:
-      'A piezoelectric receiver converts incoming ultrasonic pressure into a small electrical signal.',
-    input: 'Echo pressure',
-    unit: 'Pa',
-    min: 0, max: 2, step: 0.01, initial: 0.5, digits: 2,
-    baseline: 0.5,
-    calculate: x => ({
-      primary: 5.6 * x,
-      secondary: 5.6 * x * 0.1
+    name:'Receiver (40 kHz)',
+    tab:'Receiver',
+    file:'receiver.glb',
+    description:'A piezoelectric receiver converts incoming ultrasonic pressure into a small electrical signal.',
+    input:'Echo pressure', unit:'Pa',
+    min:0, max:2, step:0.01, initial:0.5, digits:2,
+    baseline:0.5,
+    calculate:x=>({
+      primary:5.6*x,
+      secondary:5.6*x*0.1
     }),
-    primaryLabel: 'Illustrative output voltage',
-    primaryValue: s => s.primary.toFixed(2) + ' mV',
-    secondaryLabel: 'Illustrative amplified output',
-    secondaryValue: s => s.secondary.toFixed(3) + ' V',
-    main: 'primary',
-    how:
-      'The direct piezoelectric effect converts mechanical deformation caused by incoming sound waves into an electrical charge and voltage.',
-    equation: 'V ∝ p',
-    more:
-      'The displayed sensitivity and amplifier relationship are simplified teaching assumptions, not specifications for your particular receiver.'
+    primaryLabel:'Illustrative output voltage',
+    primaryValue:s=>s.primary.toFixed(2)+' mV',
+    secondaryLabel:'Illustrative amplified output',
+    secondaryValue:s=>s.secondary.toFixed(3)+' V',
+    main:'primary',
+    how:'The direct piezoelectric effect converts mechanical deformation caused by incoming sound waves into an electrical charge and voltage.',
+    equation:'V ∝ p',
+    more:'The displayed sensitivity and amplifier relationship are simplified teaching assumptions, not specifications for your receiver.'
   },
   {
-    name: 'HC-SR04 ranging module',
-    tab: 'HC-SR04',
-    file: 'hcsr04.glb',
-    description:
-      'This module uses an ultrasonic transmitter and receiver to estimate distance from the returning echo.',
-    input: 'Target distance',
-    unit: 'cm',
-    min: 2, max: 400, step: 1, initial: 50, digits: 0,
-    baseline: 50,
-    calculate: x => ({
-      primary: (2 * (x / 100) / 343) * 1000,
-      secondary: x
+    name:'HC-SR04 ranging module',
+    tab:'HC-SR04',
+    file:'hcsr04.glb',
+    description:'This module uses an ultrasonic transmitter and receiver to estimate distance from the returning echo.',
+    input:'Target distance', unit:'cm',
+    min:2, max:400, step:1, initial:50, digits:0,
+    baseline:50,
+    calculate:x=>({
+      primary:(2*(x/100)/343)*1000,
+      secondary:x
     }),
-    primaryLabel: 'Round-trip time',
-    primaryValue: s => s.primary.toFixed(3) + ' ms',
-    secondaryLabel: 'Estimated distance',
-    secondaryValue: s => s.secondary.toFixed(1) + ' cm',
-    main: 'primary',
-    how:
-      'The module emits ultrasonic pulses and measures the time taken for an echo to return. The estimated distance is calculated from the round-trip time.',
-    equation: 'd = c · t / 2',
-    more:
-      'This is a teaching calculation using a speed of sound of approximately 343 m/s. The real module needs appropriate trigger and echo signals to measure a physical target.'
+    primaryLabel:'Round-trip time',
+    primaryValue:s=>s.primary.toFixed(3)+' ms',
+    secondaryLabel:'Estimated distance',
+    secondaryValue:s=>s.secondary.toFixed(1)+' cm',
+    main:'primary',
+    how:'The module emits ultrasonic pulses and measures the time taken for an echo to return. Distance is calculated from the round-trip time.',
+    equation:'d = c · t / 2',
+    more:'This teaching calculation assumes a speed of sound of approximately 343 m/s. The real module needs trigger and echo signals to measure a physical target.'
   },
   {
-    name: 'Doppler flow transducer',
-    tab: 'Doppler',
-    file: 'doppler.glb',
-    description:
-      'A Doppler ultrasonic transducer can estimate fluid velocity by measuring the frequency shift of reflected ultrasound.',
-    input: 'Flow velocity',
-    unit: 'm/s',
-    min: 0, max: 5, step: 0.05, initial: 1, digits: 2,
-    baseline: 1,
-    calculate: x => ({
-      primary: (2 * 1000000 * x * Math.cos(Math.PI / 3)) / 1480,
-      secondary: 1000000 + (2 * 1000000 * x * Math.cos(Math.PI / 3)) / 1480
+    name:'Doppler flow transducer',
+    tab:'Doppler',
+    file:'doppler.glb',
+    description:'A Doppler ultrasonic transducer can estimate fluid velocity by measuring the frequency shift of reflected ultrasound.',
+    input:'Flow velocity', unit:'m/s',
+    min:0, max:5, step:0.05, initial:1, digits:2,
+    baseline:1,
+    calculate:x=>({
+      primary:(2*1000000*x*Math.cos(Math.PI/3))/1480,
+      secondary:1000000+(2*1000000*x*Math.cos(Math.PI/3))/1480
     }),
-    primaryLabel: 'Illustrative Doppler shift',
-    primaryValue: s => s.primary.toFixed(0) + ' Hz',
-    secondaryLabel: 'Illustrative received frequency',
-    secondaryValue: s => (s.secondary / 1000000).toFixed(6) + ' MHz',
-    main: 'primary',
-    how:
-      'Moving particles in a fluid reflect ultrasound with a frequency shift. Under simplified conditions, the shift is proportional to velocity and depends on the beam angle.',
-    equation: 'Δf = 2 · f₀ · v · cos θ / c',
-    more:
-      'This example assumes a 1 MHz transmitted frequency, a 60-degree angle, and a sound speed of 1480 m/s. Real equipment requires calibration and suitable acoustic coupling.'
+    primaryLabel:'Illustrative Doppler shift',
+    primaryValue:s=>s.primary.toFixed(0)+' Hz',
+    secondaryLabel:'Illustrative received frequency',
+    secondaryValue:s=>(s.secondary/1000000).toFixed(6)+' MHz',
+    main:'primary',
+    how:'Moving particles in a fluid reflect ultrasound with a frequency shift. Under simplified conditions, the shift is proportional to velocity and depends on beam angle.',
+    equation:'Δf = 2 · f₀ · v · cos θ / c',
+    more:'This example assumes a 1 MHz transmitted frequency, a 60-degree angle, and a sound speed of 1480 m/s. Real equipment requires calibration.'
   }
 ];
 
 const $ = id => document.getElementById(id);
 const viewer = $('viewer');
 const slider = $('slider');
+const arButton = $('arButton');
 let selected = 0;
 
 function updateModel(index) {
   const item = transducers[index];
-
   $('status').textContent = 'Loading ' + item.file + '...';
-  viewer.setAttribute('alt', '3D model: ' + item.name);
-  viewer.setAttribute('src', './' + item.file);
+  viewer.setAttribute('alt','3D model: '+item.name);
+  viewer.setAttribute('src','./'+item.file);
 }
 
 function updateReadings() {
@@ -429,7 +409,7 @@ function updateReadings() {
 
   let percent = 0;
   if (baseValue !== 0) {
-    percent = ((currentValue - baseValue) / Math.abs(baseValue)) * 100;
+    percent = ((currentValue-baseValue)/Math.abs(baseValue))*100;
   } else if (currentValue !== 0) {
     percent = 100;
   }
@@ -437,21 +417,22 @@ function updateReadings() {
   $('label1').textContent = item.primaryLabel;
   $('value1').textContent = item.primaryValue(result);
   $('change').textContent =
-    (percent >= 0 ? '+' : '') + percent.toFixed(2) + '%';
+    (percent>=0?'+':'')+percent.toFixed(2)+'%';
   $('label3').textContent = item.secondaryLabel;
   $('value3').textContent = item.secondaryValue(result);
   $('label4').textContent = item.input;
-  $('value4').textContent = input.toFixed(item.digits) + ' ' + item.unit;
-  $('sliderLabel').textContent = item.input + ' (' + item.unit + ')';
+  $('value4').textContent =
+    input.toFixed(item.digits)+' '+item.unit;
+  $('sliderLabel').textContent = item.input+' ('+item.unit+')';
 }
 
 function selectTransducer(index) {
   selected = index;
   const item = transducers[index];
 
-  document.querySelectorAll('#tabs button').forEach((button, i) => {
-    button.classList.toggle('on', i === index);
-    button.setAttribute('aria-pressed', String(i === index));
+  document.querySelectorAll('#tabs button').forEach((button,i)=>{
+    button.classList.toggle('on',i===index);
+    button.setAttribute('aria-pressed',String(i===index));
   });
 
   $('name').textContent = item.name;
@@ -469,30 +450,59 @@ function selectTransducer(index) {
   updateModel(index);
 }
 
-transducers.forEach((item, index) => {
+transducers.forEach((item,index)=>{
   const button = document.createElement('button');
   button.type = 'button';
   button.textContent = item.tab;
-  button.setAttribute('aria-pressed', 'false');
-  button.addEventListener('click', () => selectTransducer(index));
+  button.setAttribute('aria-pressed','false');
+  button.addEventListener('click',()=>selectTransducer(index));
   $('tabs').appendChild(button);
 });
 
-slider.addEventListener('input', updateReadings);
+slider.addEventListener('input',updateReadings);
 
-viewer.addEventListener('load', () => {
+viewer.addEventListener('load',()=>{
   $('status').textContent =
-    '3D model loaded. Drag to rotate or use controls to zoom.';
+    '3D model loaded. Rotate or zoom the model, or try View in AR.';
 });
 
-viewer.addEventListener('error', () => {
+viewer.addEventListener('error',()=>{
   $('status').textContent =
-    'Could not load the 3D model. Check that the .glb filename is exact and the file is committed beside index.html.';
-  console.error('Failed to load model:', viewer.getAttribute('src'));
+    'Could not load the model. Check the exact .glb filename and ensure it is committed beside index.html.';
+  console.error('Model load failed:',viewer.getAttribute('src'));
+});
+
+/* The button stays visible even when AR support is unavailable. */
+arButton.addEventListener('click',async()=>{
+  if (!customElements.get('model-viewer')) {
+    $('status').textContent =
+      'The 3D viewer library has not loaded. Check your internet connection and refresh.';
+    return;
+  }
+
+  if (!viewer.loaded) {
+    $('status').textContent =
+      'Please wait for the 3D model to finish loading, then try again.';
+    return;
+  }
+
+  if (typeof viewer.activateAR !== 'function') {
+    $('status').textContent =
+      'AR is not supported by this viewer or device. You can still rotate the 3D model.';
+    return;
+  }
+
+  try {
+    await viewer.activateAR();
+    $('status').textContent = 'Opening AR...';
+  } catch (error) {
+    console.error('AR launch failed:',error);
+    $('status').textContent =
+      'AR could not launch. Try opening this HTTPS website on a compatible phone using Chrome (Android) or Safari (iPhone).';
+  }
 });
 
 selectTransducer(0);
 </script>
-
 </body>
 </html>
