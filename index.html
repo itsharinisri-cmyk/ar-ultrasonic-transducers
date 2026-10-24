@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#102c4c">
 <title>Ultrasonic Transducers | WebAR Lab</title>
-<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+<script type="module" src="./model-viewer.min.js"></script>
 <style>
 :root{--bg:#f3f6fa;--card:#fff;--ink:#14263d;--mute:#5b6b80;--navy:#102c4c;--acc:#1f7ae0;--line:#d8e0ea}
 @media(prefers-color-scheme:dark){:root{--bg:#0b1624;--card:#12233a;--ink:#e6edf6;--mute:#93a4ba;--line:#243a57}}
@@ -53,6 +53,7 @@ footer{padding:10px 0 40px;font-size:.82rem;color:var(--mute)}
 <model-viewer id="mv" environment-image="neutral" exposure="1.1" camera-controls touch-action="pan-y" auto-rotate shadow-intensity="1" ar ar-modes="webxr scene-viewer quick-look" alt="Ultrasonic transducer 3D model">
 <button slot="ar-button" class="arbtn">View in AR</button>
 </model-viewer></div>
+<p class="hint" id="status" style="color:#e5543c"></p>
 <p class="hint">Drag to rotate · Pinch or scroll to zoom · AR availability depends on device and browser.</p>
 </section>
 
@@ -123,7 +124,9 @@ const fx=(v,d)=>(+v).toFixed(d);
 const $=id=>document.getElementById(id), mv=$('mv'), sl=$('sl');
 let cur=0;
 
-function build(i){mv.src='models/'+T[i].file+'.glb';}
+function build(i){$('status').textContent='';mv.src=T[i].file+'.glb';}
+mv.addEventListener('error',e=>{$('status').textContent='Model failed to load: '+((e.detail&&e.detail.sourceError&&e.detail.sourceError.message)||'file not found - check the .glb files are in the same folder as index.html')});
+setTimeout(()=>{if(!customElements.get('model-viewer'))$('status').textContent='Viewer script did not load - upload model-viewer.min.js next to index.html'},3000);
 function update(){
   const t=T[cur], x=+sl.value, s=t.calc(x), b=t.calc(t.base);
   const ch=b[t.main]?(s[t.main]-b[t.main])/b[t.main]*100:0;
